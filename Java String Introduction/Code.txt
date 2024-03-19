@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+        String A=sc.next();
+        String B=sc.next();
+        
+        
+        int sumLengths = A.length() + B.length();
+        System.out.println(sumLengths);
+        // Determine if A is lexicographically larger than B
+        boolean isLexicographicallyLarger = A.compareTo(B) > 0;
+        if(isLexicographicallyLarger == false){
+            System.out.println("No");
+        }else{
+            System.out.println("Yes");
+        }
+        
+          
+        String capitalizedStr1 = capitalizeFirstLetter(A);
+        String capitalizedStr2 = capitalizeFirstLetter(B);
+        
+        System.out.println(capitalizedStr1 + " " + capitalizedStr2);
+        
+        
+        
+    }
+    private static String capitalizeFirstLetter(String str) {
+        if (str == null || str.isEmpty()) {
+            return str;
+        }
+        return Character.toUpperCase(str.charAt(0)) + str.substring(1);
+    }
+}
+
+
+
