@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        Scanner sc =new Scanner(System.in);
+        String A=sc.next();
+        /* Enter your code here. Print output to STDOUT. */
+        
+        System.out.println(isPalindrome(A));
+    }
+       public static String isPalindrome(String str) {
+        // The below line of code will remove all non-alphanumeric characters and convert to lowercase
+        str = str.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+
+        // Compare original string with its reverse
+        int start = 0;
+        int end = str.length() - 1;
+        while (start < end) {
+            if (str.charAt(start) != str.charAt(end)) {
+                return "No";
+            }
+            start++;
+            end--;
+        }
+        return "Yes";
+    } 
+    }
